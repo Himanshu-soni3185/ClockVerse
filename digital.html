@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body
+    class="flex flex-col bg-slate-950 w-screen h-screen items-center justify-center font-outfit overflow-hidden relative m-0">
+
+    <!-- Background Elements -->
+    <div
+        class="absolute top-[20%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-rose-900/10 blur-[100px] pointer-events-none mix-blend-screen">
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html"
+        class="absolute top-8 left-8 text-slate-400 hover:text-white flex items-center gap-2 transition-colors duration-300 font-inter text-sm tracking-widest uppercase">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back
+    </a>
+
+    <!-- Main Container -->
+    <div
+        class="glass-panel w-full max-w-4xl p-12 rounded-[3rem] relative z-10 neon-box-red transition-all duration-700">
+
+        <h1
+            class="text-2xl text-rose-500 font-semibold tracking-[0.2em] uppercase text-center mb-8 drop-shadow-[0_0_8px_rgba(227,14,14,0.5)]">
+            Digital Display</h1>
+
+        <!-- Clock Face -->
+        <div
+            class="flex flex-row items-center justify-center gap-4 sm:gap-8 bg-slate-900/60 p-8 rounded-4xl border border-white/5 shadow-inner">
+
+            <!-- Hours -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="bg-black border border-white/10 rounded-2xl w-24 sm:w-32 h-32 sm:h-40 flex items-center justify-center shadow-[inset_0_4px_20px_rgba(255,0,0,0.1)]">
+                    <div
+                        class="h-counter text-6xl sm:text-8xl font-black text-rose-500 neon-text-red font-mono tracking-tighter">
+                        12</div>
+                </div>
+                <span class="text-slate-500 text-xs tracking-widest uppercase mt-4 font-inter">Hours</span>
+            </div>
+
+            <!-- Colon -->
+            <div
+                class="dot flex flex-col items-center justify-center h-32 sm:h-40 text-6xl sm:text-8xl font-black text-rose-500/80 animate-pulse pb-8">
+                :</div>
+
+            <!-- Minutes -->
+            <div class="flex flex-col items-center">
+                <div
+                    class="bg-black border border-white/10 rounded-2xl w-24 sm:w-32 h-32 sm:h-40 flex items-center justify-center shadow-[inset_0_4px_20px_rgba(255,0,0,0.1)]">
+                    <div
+                        class="m-counter text-6xl sm:text-8xl font-black text-rose-500 neon-text-red font-mono tracking-tighter">
+                        00</div>
+                </div>
+                <span class="text-slate-500 text-xs tracking-widest uppercase mt-4 font-inter">Minutes</span>
+            </div>
+
+            <!-- Colon -->
+            <div
+                class="dot hidden sm:flex flex-col items-center justify-center h-40 text-8xl font-black text-rose-500/80 animate-pulse pb-8">
+                :</div>
+
+            <!-- Seconds -->
+            <div class="hidden sm:flex flex-col items-center">
+                <div
+                    class="bg-black border border-white/10 rounded-2xl w-32 h-40 flex items-center justify-center shadow-[inset_0_4px_20px_rgba(255,0,0,0.1)]">
+                    <div class="s-counter text-8xl font-black text-rose-500 neon-text-red font-mono tracking-tighter">00
+                    </div>
+                </div>
+                <span class="text-slate-500 text-xs tracking-widest uppercase mt-4 font-inter">Seconds</span>
+            </div>
+
+        </div>
+
+        <!-- Mobile Seconds (moved to row below on small screens) -->
+        <div class="flex sm:hidden justify-center mt-6">
+            <div class="flex items-center gap-3">
+                <span class="text-slate-500 text-xs tracking-widest uppercase font-inter">Seconds</span>
+                <div class="bg-black border border-white/10 rounded-xl px-4 py-2 flex items-center justify-center">
+                    <div class="s-counter text-3xl font-bold text-rose-400 font-mono">00</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script src="src/js/DigitalClock.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "clock-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./css/style.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./css/style.css --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1"
+  }
+}

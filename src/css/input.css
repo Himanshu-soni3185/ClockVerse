@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+    --font-inter: "Inter", sans-serif;
+    --font-outfit: "Outfit", sans-serif;
+
+    --color-neon-red: #ff003c;
+    --color-neon-blue: #00f0ff;
+    --color-dark-surface: rgba(15, 23, 42, 0.7);
+    --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+    body {
+        @apply m-0 p-0 overflow-x-hidden antialiased text-white bg-slate-950;
+        font-family: var(--font-inter);
+    }
+}
+
+@layer utilities {
+    .glass-panel {
+        @apply bg-dark-surface backdrop-blur-md border border-glass-border shadow-2xl;
+    }
+
+    .neon-text-red {
+        text-shadow: 0 0 10px rgba(255, 0, 60, 0.7), 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px rgba(255, 0, 60, 0.3);
+    }
+
+    .neon-text-blue {
+        text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.3);
+    }
+
+    .neon-box-red {
+        box-shadow: 0 0 15px rgba(255, 0, 60, 0.4), inset 0 0 15px rgba(255, 0, 60, 0.2);
+    }
+
+    .analog-shadow {
+        box-shadow:
+            20px 20px 60px rgba(0, 0, 0, 0.8),
+            -20px -20px 60px rgba(255, 255, 255, 0.05),
+            inset 10px 10px 30px rgba(0, 0, 0, 0.5),
+            inset -10px -10px 30px rgba(255, 255, 255, 0.05);
+    }
+
+    .analog-inner {
+        box-shadow:
+            inset 5px 5px 15px border-black,
+            inset -5px -5px 15px rgba(255, 255, 255, 0.1);
+    }
+}
